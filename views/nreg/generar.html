@@ -1,0 +1,385 @@
+
+
+{{extend 'layout.html'}}
+<script type="text/javascript">
+$(document).ready(function(){
+  
+    $("#myModal").modal('show');
+  
+});
+</script>
+<style type="text/css">
+	#modal {position:absolute;
+			background-color: #1b8dbb;/*FONDO*/
+			border-radius:10px;
+
+		
+			/*bordes redondeados*/
+
+
+			
+			
+			
+			top:190px;
+			outline: none; 
+
+	}
+    #header{position:relative;
+    	width: 900px; /* ancho*/
+    		height: 200px;/* alto*/
+    		
+    		margin: AUTO;
+    		
+    		
+    		border-color: #000000;}
+
+    #h3
+    	{
+    	position: relative;/* no dependa del resto de elementos*/
+    	font: oblique bold 170% cursive;
+    	right :-400px;
+    	top: 10px;
+     	color: #FFFFFF
+     	
+
+    	
+    }
+
+    #h4{position: relative;
+    	top:30px;
+    	left: 200px;
+
+    	font: oblique bold 120%;
+    	margin: AUTO;
+    	font-size: x-large;
+    	 color: #FFFFFF
+    	
+
+    }
+    #botones{
+		position: relative;
+		left: 135px;
+    	color:#ffffff;
+    	background-color: #1b8dbb;
+    	border-radius:4px;/*bordes redondeados*/
+    	width:200px;
+    	height: : 1000px;/* alto ancho*/;}
+
+    #boton{	position: absolute;
+    		background-color:  #1b8dbb;
+    		border-radius:4px;
+    		width:200px;px;
+    		height:35px
+    		
+    		
+
+    	}
+
+
+    	}
+    
+
+	#footer{position: absolute;
+		border-color: #1b8dbb;
+
+
+	}
+    #aceptar{
+    	border-radius:4px;
+    	left:100px;
+    	
+
+    }
+
+
+
+
+    
+    #depe{width:200px;
+    	height:35px;
+
+
+    }
+    #tipo
+    {
+    width:	 200px;
+    height:35px;
+
+
+
+    }
+    #marca
+    {width: 200px/* tamaño ancho*/;
+    	height:35px;
+
+
+
+    }
+
+    #benviar{
+		position: relative;
+		left : -90px;
+    	color:#ffffff;
+    	background-color: #642EFE;
+    	border-radius:4px;/*bordes redondeados*/
+    }
+
+    		
+
+    
+</style>
+
+  
+
+<div class="container">
+	<form method="post">
+    <div class="row">
+    	<div class="col-md-12">
+        
+            <div class="panel panel-primary well">
+              <div class="panel-heading">Estacion Carga</div>
+              <div class="panel-body">
+                    <div class="row">
+
+
+
+
+
+						<div class="row-fluid">
+
+
+		
+						<div class="col-sm-6 col-md-4">
+						<div class="form-group">
+					
+				
+						<label for="email">Dependencia:</label>
+						{{=form.custom.widget.dependencia}}
+						</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_dependencia')}}" class="btn btn-info btn-sm pull-right" role="button" id="depe"><span class="glyphicon glyphicon-plus"></span>Agregar Dependencias
+				</a></div><br>
+
+
+				<div class="form-group">
+					<label for="email">Tipo:</label>
+					{{=form.custom.widget.tipo}}
+				</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_tipo')}}" class="btn btn-info btn-sm pull-right" role="button" id="tipo"><span class="glyphicon glyphicon-plus"></span>   Agregar Tipo
+				</a></div><br>
+
+				<div class="form-group">
+					<label for="email">Marca:</label>
+					{{=form.custom.widget.marca}}
+				</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_marca')}}" class="btn btn-info btn-sm pull-right" role="button" id="marca"><span class="glyphicon glyphicon-plus"></span>Agregar Marca
+				</a></div><br>
+
+				
+				<div class="form-group">
+					<label for="canti">Modelo:</label>
+					<input type="text" name="modelo" class="form-control" id="modelo">
+				</div>
+				<div class="form-group">
+					<label for="canti">Numero de Serie:</label>
+					<input type="text" name="serie" class="form-control">
+
+
+				</div>
+				
+				
+					
+				<!-- Large modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="botones"  ><span class="glyphicon glyphicon-plus"  ></span> GENERAR NUMERO DE SERIE </button>
+
+				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop="false"><!--data-backdrop="false" evita cerrar la venta modal
+					si se presiona fuera de ella-->
+  				<div class="modal-dialog modal-lg" role="document">
+    				<div class="modal-content" id="modal">
+
+
+
+    					
+    					<div class="header" id=header>
+    						
+
+    						<h4 id=h4>SU NUMERO DE SERIE SE GENERO Y ES:	</h4><h3 id=h3><br>	{{=serie0}} </h3>  
+
+    					
+    						<br>
+
+    						
+    						<!-- footer de la ventana-->
+
+    						<div class="modal-footer" id="footer">
+    							<a   class="btn btn-primary" data-dismiss="modal" id="aceptar" 
+    							 type="submit  " href="{{=URL(c='nreg',f='generar',args=[serie0])}}" >ACEPTAR</a>
+    						</div>
+    						<br>
+    						
+    						
+
+
+				
+
+
+      				
+    			</div>
+  				</div>
+					</div>
+
+				
+				
+				<br>
+				<br> 
+
+					
+					
+
+				
+					  
+
+			</div>
+
+			<div><br> <button type="submit" class="btn btn-info pull-right" id="benviar">Enviar Datos</button>
+
+         			 <input type="hidden" name="_formname" value="prueba"/>
+				
+			</div>
+			
+
+
+				
+		</div>
+
+	
+		<div class="col-md-4">
+			<div class="form-group">
+					
+			
+
+			
+			
+			
+
+					
+					<label>Fecha de alta del Equipo:</label>
+					<div class='input-group date' id='datetimepicker1'>
+						{{=form.custom.widget.frecibe}}
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+
+						</span>
+
+
+
+
+
+
+			</div>
+
+
+
+
+			
+					
+					</div>
+					
+					<div class="form-group">
+						<label for="canti">Recibe:</label>
+						<textarea name="qrebe" rows="6" cols="40"></textarea>
+					</div>
+
+
+					<div class="form-group">
+						<label for="canti">Descripcion:</label>
+						<textarea name="descrip1" rows="6" cols="40"></textarea>
+					</div>
+					<div class="form-group">
+					<label for="email">Estado:</label>
+					{{=form.custom.widget.estado}}
+
+					</div>
+
+					<div class="form-group">
+					<input type="file" name="tu_imagen"  size="40" id="examinar">
+					<br>
+
+					<input type="submit" name="boton" value="Subir archivo" id="boton">
+
+
+
+
+					
+					
+					
+					
+					
+
+			</div>
+
+		
+	</div>
+
+
+	<div class="col-md-4">
+			<div class="form-group">
+					
+			
+
+			
+			
+			
+
+					
+					<label>Fecha de Baja del Equipo:</label>
+					<div class='input-group date' id='datetimepicker1'>
+						{{=form.custom.widget.fbaja}}
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+
+						</span>
+
+
+
+
+
+
+			</div>
+
+
+				
+
+			
+					
+					</div>
+
+					<div class="form-group">
+						<label for="canti">Da de Baja:</label>
+						<textarea name="qbaja" rows="6" cols="40"></textarea>
+					</div>
+
+
+					
+
+	
+
+					
+
+	</form>
+</div>
+
+
+  
+</div>
+<div>
+</div>
+ </div>
+</div>
+</div>
+ </div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+<br>
+<ul class="breadcrumb">
+  <li><a href="{{=URL(c='default',f='principal')}}"  ><span class="glyphicon glyphicon-th" ></span> Panel administración</a></li>
+</ul>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+            <div class="panel panel-danger">
+              <div class="panel-heading">atención</div>
+                <div class="panel-body">
+                  <h4>Para ingresar un Nuevo Usuario deberá realizar los siguientes pasos</h4>
+                  <br>
+                   <strong><p>1. Agregar un nuevo usuario mediante el botón + Agregar Registro</p></strong>
+                   <strong><p>2. Agregar privilegios usar boton para tal fin</p></strong>
+                   <br>
+                </div>
+            </div>
+            <h4><p class="text-left"> Listado de Usuarios </p> </h4>
+
+            <br>
+
+            <style>
+              .web2py_counter { display:none}
+            </style> 
+            
+            {{=grid}}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  

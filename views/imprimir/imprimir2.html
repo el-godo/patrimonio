@@ -1,0 +1,118 @@
+{{extend 'layout_imprimir.html'}}
+<style>
+	#titulo{background-color: #642EFE;
+		color:#ffffff;
+		text-align: center;
+
+	}
+	#tabla{
+		{background-color: #642EFE;
+		color:#ffffff;
+		text-align: center;
+
+	}
+</style>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"  id="titulo"><h5><strong>LISTADO DE INVENTARIO PERTENECIENTE A :</strong></h5>  <h4><strong>
+  {{=ndepe}}</strong></h4></div><!--pongo el nombre de la dependencia-->
+  <table class="table" id:tabla>
+
+      <tr>
+      <td bgcolor="yellow"><strong>Nº</strong></td>
+      <td bgcolor="yellow"><strong>Tipo</strong></td>
+      <td bgcolor="yellow"><strong>Marca</strong></td>
+      <td bgcolor="yellow"><strong>Modelo</strong></td>
+      <td bgcolor="yellow"><strong>Numero de serie</strong></td>
+      <td bgcolor="yellow"><strong>Observaciones</strong></td>    
+      
+      <td bgcolor="yellow"> <strong>Cantidad<br></strong></td>
+      
+
+    </tr> 
+    {{i=0}}
+    {{c2=0}}
+
+  {{for x1 in l2:}}
+
+  		
+  		
+
+
+  		{{tipos=db((db.carga.dependencia==atrapa)&(db.carga.estado!="Inactivo")&(db.carga.tipo==x1)).select()}}
+  			 {{for x2 in tipos:}}
+  			 	{{i=i+1}}
+  				 <tr>
+  				 	<td>{{=i}}</td>
+
+
+				<!-- poniendo el tipo*************************************-->
+  			 	{{for x3 in settipo:}}
+  			 		
+  			 		{{if x3.id==x2.tipo:}}
+  			 		{{c2=c2+1}}
+					{{nombre=x3.ntipo}}
+  			 		      			<td><strong>{{=nombre}}</strong></td>
+
+					
+
+  			 		
+  			 		{{pass}} 
+  			 		
+
+  			 	{{pass}}
+
+  			 	<!-- poniendo el tipo*************************************-->
+
+  			 	<!-- poniendo la marca*************************************-->
+  			 	{{for x4 in setmarca:}}
+  			 		{{if x4.id==x2.marca:}}
+  			 		      			<td>{{=x4.nombre}}</td>
+
+  			 		
+  			 		{{pass}}
+
+  			 	{{pass}}
+
+  			 	<!-- poniendo la marca*************************************-->
+
+  			 	  			 	
+  				
+      			<td>{{=x2.modelo}}</td>
+      			<td>{{=x2.serie}}</td>
+      			<td>{{=x2.descrip1}}</td>
+      			<td></td>
+      			<td></td>    
+      
+      			<td><br></td>
+      		{{pass}}
+      		<tr>
+      		
+ 			
+      <td bgcolor="yellow"><strong></strong></td>
+
+      <td bgcolor="yellow"><strong> </strong></td>
+      <td bgcolor="yellow"><strong>Total</strong></td>
+      <td bgcolor="yellow"><strong></strong></td>
+      <td bgcolor="yellow"><strong></strong></td>
+      <td bgcolor="yellow"><strong></strong></td>    
+      
+      <td bgcolor="yellow"><strong>{{=c2}}</strong></td>
+       {{c2=0}}
+
+      
+
+    </tr> 
+  {{pass}} 
+  	
+  			 
+  
+  
+	</table>  
+  
+
+  
+
+  
+  

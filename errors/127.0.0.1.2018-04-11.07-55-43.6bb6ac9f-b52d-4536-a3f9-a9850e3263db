@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> global name 'dep' is not defined"
+p3
+sS'layer'
+p4
+S'D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/consulta.py'
+p5
+sS'code'
+p6
+S'#@auth.requires(auth.has_membership(\'ADMINISTRADOR\') or auth.has_membership(\'USUARIO\'))\ndef consulta():\n\n    depe= ""\n    sn=""\n    query=""\n\n\n    if request.get_vars[\'depe\']:\n            depe = request.get_vars[\'depe\']\n    fields=[db.carga.dependencia,db.carga.tipo,db.carga.marca,db.carga.modelo,db.carga.serie]\n    form=""\n    if depe!="":\n        query=db(db.carga.estado!="Inactivo")\n\n        form=SQLFORM.grid(query,\n        csv=False,\n        create=False,\n        searchable=False,\n        editable=True,\n        deletable=False,\n        details=True,\n        selectable=None,\n               \n        fields=fields)\n\n\n\n    return dict(depe=depe,form=form,sn=sn,query=query)    \n\n\n\n\n\n\n\n\ndef consulta1():\n    \n   \n    sn= ""\n    query=""\n    \n\n    \n    \n    if request.get_vars[\'sn\']:\n            sn = request.get_vars[\'sn\']\n\n        \n    fields=[db.carga.dependencia,db.carga.tipo,db.carga.marca,db.carga.modelo,db.carga.serie]  \n    form=""\n\n    \n\n  \n\n        \n\n    \n\n\n\n\n\n\n    if sn!="":\n      \n       \n\n            form = SQLFORM.grid((db.carga.serie.upper().like(\'%\'+sn+\'%\')),#|db.carga.dependencia.like(\'%\'+depe+\'%\'),\n            csv=False,\n            create=False,\n            searchable=False,\n            editable=True,\n            deletable=False,\n            details=True,\n            selectable=None,\n               \n            fields=fields)\n\n\n            \n    \n    \n    return dict(form=form,sn=sn)\n\ndef consulta2():\n    sn=""\n    depe=""\n    form=""\n    query=""\n    x=""\n    #if request.get_vars[\'depe\']:\n            #sn = request.get_vars[\'depe\']\n    #if depe!="":t\n    depen=db.carga.dependencia\n    #friltro los equivos inactivos para no visualizarlos\n    depno=depen!="INACTIVO"\n    \n    \n\n\n\n    return dict(depe=depe,sn=sn,form=form,query=query,depen=depen,dep=dep,x=x)\n\n\nresponse._vars=response._caller(consulta2)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/consulta.py", line 108, in <module>\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/consulta.py", line 105, in consulta2\n    return dict(depe=depe,sn=sn,form=form,query=query,depen=depen,dep=dep,x=x)\nNameError: global name \'dep\' is not defined\n'
+p11
+s.

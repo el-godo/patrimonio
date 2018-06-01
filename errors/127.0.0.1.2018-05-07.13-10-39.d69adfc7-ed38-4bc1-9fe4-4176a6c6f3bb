@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.ValueError'> invalid literal for long() with base 10: '|1|'"
+p3
+sS'layer'
+p4
+S'D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/imprimir.py'
+p5
+sS'code'
+p6
+S'def imprimir():\n\timport datetime\n\ti=b=ii=cont=0\n\tx=dx=\'\'\n\ta2=0\n\ttipos=marcas=ntipo=nmarca=[]\n\t\n\n\t\n\t\n\t\n\n\t#atrapo el id\n\tatrapa=request.args[0]\n\t#atrapo el nombre de la dependencia\n\n\tndepe=request.args[1]\n\n\t#consulto por el id de la dependencia y filtro los inactivos\n\tquery=db((db.carga.dependencia==atrapa)&(db.carga.estado!="Inactivo")).select()\n\t#recorro la consulta\n\tfor x in query:\n\n\t\t#contador\n\t\ti=i+1\n\t\tmodelo=x.modelo\n\t\tserie=x.serie\n\t\tobs=x.descrip1\n\t\t#consulto por el tipo\n\t\ttipos.append(x.tipo)\n\t\ttipo=db(db.tipos.id==tipos).select()\n\n\n\t\t\n\t\t\t\n\n\n\t\t\t\t\t\t\t\n\t\t#consulto por la marca\n\t\tmarcas.append(x.marca)\n\n\tfor x1 in tipo:\n\t\tntipo=x1.ntipo\n\n\n\t\t\n\n\n\t\n\t\t\t\n\t\n\t\t\n\t\t\n\t\t\n\t\t\n\n\n\t\t\n\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\n\treturn dict(atrapa=atrapa,query=query,ndepe=ndepe,i=i,x=x,\n\t\tmodelo=modelo,serie=serie,obs=obs,ii=ii,marcas=marcas,tipos=tipos,tipo=tipo,ntipo=ntipo,x1=x1)\nresponse._vars=response._caller(imprimir)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/imprimir.py", line 65, in <module>\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\applications\\patrimonio\\controllers/imprimir.py", line 31, in imprimir\n    tipo=db(db.tipos.id==tipos).select()\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\objects.py", line 2020, in select\n    return adapter.select(self.query, fields, attributes)\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\sqlite.py", line 123, in select\n    return super(SQLiteAdapter, self).select(query, fields, attributes)\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1283, in select\n    sql = self._select(query, fields, attributes)\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1170, in _select\n    sql_w = \' WHERE \' + self.expand(query) if query else \'\'\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 952, in expand\n    rv = op(first, second, **optional_args)\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 846, in EQ\n    self.expand(second, first.type))\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 962, in expand\n    rv = self.represent(expression, field_type)\n  File "D:\\backup servidor\\uli\\web2py\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1435, in represent\n    return str(long(obj))\nValueError: invalid literal for long() with base 10: \'|1|\'\n'
+p11
+s.

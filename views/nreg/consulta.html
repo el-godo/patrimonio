@@ -1,0 +1,67 @@
+{{extend 'layout.html'}}
+
+
+
+
+<style>
+#button.btn.btn-primary{
+  background-color: #ff5733;
+  
+  
+
+
+}
+#boton_sin{
+  background-color: #ff5733;
+  
+  width: 150px;
+
+  position: absolute;
+  right:600px;
+  top:149px;
+
+
+  
+}
+
+
+
+
+
+  
+</style>
+<div class="container">
+    <div class="row">
+        
+            <div class="panel panel-primary well">
+              <div class="panel-heading">Panel de Busqueda</div>
+              <div class="panel-body">
+                    <div class="row">
+  
+ 
+       
+
+           
+
+    
+
+
+
+
+
+  
+  {{=form}}
+   
+  
+  <a  class="btn btn-danger" role="button"  id='boton_sin' href="{{=URL(r=request,f='../../nreg/generar.html')}}"><span class="glyphicon glyphicon-ok"></span > sin numero de serie</a>
+ 
+  
+  
+                    </div>
+            </div>
+            </div>
+         </div>  
+  </div>
+  
+    
+</div>

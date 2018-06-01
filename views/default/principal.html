@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+
+
+<br>
+
+<div class="container">
+    <div class="row">
+        
+            <div class="panel panel-primary well">
+              <div class="panel-heading">Panel Administrativo</div>
+              <div class="panel-body">
+                    <div class="col-md-2">
+                        <a href="{{=URL(r=request,f='../../nreg/consulta.html')}}" class="thumbnail">
+                          <img src="{{=URL('static','images/nuevo.jpg')}}" alt="">
+                        </a>
+                        <h6><p class="text-center text-info">Cargar Nuevo Bien</p></h6>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="{{=URL(r=request,f='../../consulta/menu.html')}}" class="thumbnail">
+                          <img src="{{=URL('static','images/consulta.png')}}" alt="">
+                        </a>
+                        <h6><p class="text-center text-info">Consulta</p></h6>
+                    </div>
+                     
+                      
+                      <div class="col-md-2">
+                        <a href="{{=URL(r=request,f='../../usuario/usuario.html')}}" class="thumbnail">
+                          <img src="{{=URL('static','images/usuarios.png')}}" alt="">
+                        </a>
+                        <h6><p class="text-center text-info">Administrar Usuarios</p></h6>
+                    </div>
+              </div>
+            </div>
+    </div>
+
+  
+</div>

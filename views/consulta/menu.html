@@ -1,0 +1,100 @@
+{{extend 'layout.html'}}
+{{extend 'layout_modal.html'}}
+
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  
+    $("#myModal").modal('show');
+  
+});
+</script>
+<style type="text/css">
+    #myModal {
+                 
+                top:25%;
+                right:5%;
+                
+                
+                
+                outline: none;
+
+                
+             }
+    .modal-header{
+                background: #265a88;}
+    .modal-title{
+        color: #fff;
+    }   
+    #dep{
+        position: relative;
+        border-radius: 5px;
+        background-color:#0aace1;
+        right: -100px;
+        width: 160px ;
+
+    }
+    #serie{
+        position: relative;
+        border-radius: 5px;
+       background-color:#0aace1;
+       right: -350px ;
+       top: -57px;
+       width: 150px ;
+
+
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+    
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade" data-backdrop="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title"><img src="{{=URL('static','images/atencion.png')}}" alt=""> Buscar Por:  <span class="label label-danger"></span></h4>
+                </div>
+                <div class="modal-body">
+                
+                    
+                      
+                    
+                   
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-sm-12 col-md-4">
+						<div class="form-group">
+                    <a href="{{=URL(c='consulta',f='consulta')}}" class="btn btn-danger" role="button" id="dep"><span class="glyphicon glyphicon-hand-left" aria-hidden="true" ></span> DEPENDENCIA</a>
+                    <br>
+                                        <br>
+
+
+                
+
+                
+                    
+                    <a href="{{=URL(c='consulta',f='consulta1')}}" class="btn btn-danger" role="button" id="serie"><span class="glyphicon glyphicon-hand-left" aria-hidden="true" ></span> NUMERO DE SERIE</a>    
+                </div>   
+                </div> 
+                </div>     
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>  
+

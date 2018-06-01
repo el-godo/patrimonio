@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+
+<div class="container">
+    <div class="row">
+        
+            <div class="panel panel-primary well">
+              <div class="panel-heading">Panel de Busqueda</div>
+              <div class="panel-body">
+                    <div class="row">
+    <form class="form-inline" role="search" method="get" action="consulta1">                  
+                   
+  
+
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+         <h5>Busqueda por Numero de Serie</h5> 
+     
+      <input type="text" class="form-control" placeholder="Buscar Equipos Por Numero de Serie" name="sn" value="{{=sn}}" name="form2">
+      <br>
+          <button type="submit" class="btn btn-default" name="boton1">BUSCAR</button>
+      
+       
+      </span>
+
+
+      </div><!-- /input-group -->
+
+  </div><!-- /.col-lg-6 -->
+ 
+      </div>     
+  
+
+
+
+
+  
+  {{=form}}
+  {{=sn}}
+  
+  
+
+
+</div><!-- /.row -->
+              </div>
+            </div>
+    </div>
+</form>
+
+
+</div>

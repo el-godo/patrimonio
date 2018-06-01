@@ -1,0 +1,291 @@
+{{extend 'layout.html'}}
+<script type="text/javascript">
+$(document).ready(function(){
+  
+    $("#myModal").modal('show');
+  
+});
+</script>
+<style type="text/css">
+    #myModal {
+                
+                top:10%;
+                right:5%;
+                
+                outline: none;
+
+                
+             }
+    .modal-header{
+                background: #265a88;}
+    .modal-title{
+        color: #fff;
+    }   
+</style>
+
+  
+
+<div class="container">
+	<form method="post">
+    <div class="row">
+    	<div class="col-md-12">
+        
+            <div class="panel panel-primary well">
+              <div class="panel-heading">Estacion Carga</div>
+              <div class="panel-body">
+                    <div class="row">
+
+
+
+
+
+						<div class="row-fluid">
+
+
+		
+						<div class="col-sm-6 col-md-4">
+						<div class="form-group">
+					
+				
+						<label for="email">Dependencia:</label>
+						{{=form.custom.widget.dependencia}}
+						</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_dependencia')}}" class="btn btn-info btn-sm pull-right" role="button" ><span class="glyphicon glyphicon-plus"></span>Agregar Dependencias
+				</a></div><br>
+
+
+				<div class="form-group">
+					<label for="email">Tipo:</label>
+					{{=form.custom.widget.tipo}}
+				</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_tipo')}}" class="btn btn-info btn-sm pull-right" role="button"><span class="glyphicon glyphicon-plus"></span>   Agregar Tipo
+				</a></div><br>
+
+				<div class="form-group">
+					<label for="email">Marca:</label>
+					{{=form.custom.widget.marca}}
+				</div>
+				<div ><a href="{{=URL(c='cargar',f='cargar_marca')}}" class="btn btn-info btn-sm pull-right" role="button"><span class="glyphicon glyphicon-plus"></span>Agregar Marca
+				</a></div><br>
+
+				
+				<div class="form-group">
+					<label for="canti">Modelo:</label>
+					<input type="text" name="modelo" class="form-control" id="modelo">
+				</div>
+				<div class="form-group">
+					<label for="canti">Numero de Serie:</label>
+					<input type="text" name="serie" class="form-control" id="serie" >
+				</div>
+				
+				
+					
+				<!-- Large modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">GENERAR NUMERO DE SERIE</button>
+
+				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  				<div class="modal-dialog modal-lg" role="document">
+    				<div class="modal-content">
+
+
+
+    					
+    					<!--<div class="header">
+    						<script>
+    						var i="hola"
+    						function pasar(ht) {
+   								var query = window.location.pathname;
+   								var vars = query.split("&");
+   								for (var i=0; i < vars.length; i++) {
+       							var pair = vars[i].split("=");
+       							if(pair[0] == variable) {
+           						return pair[1];
+       							}
+   									}
+   							return false;
+							}
+							var ht =window.location.pathname
+							if (ht.indexOf('/')>0)
+
+
+
+							
+							</script>-->
+
+    						<h4>SU NUMERO DE SERIE SE GENERO Y ES:{{=}} <script>document.write(ht1)</script>
+
+    						</h4>
+    						<br>
+    						<br>
+    						<div ><a class="btn btn-info btn-sm pull-right" role="button"><span class="glyphicon glyphicon-plus" ></span>   Cerrar
+							
+
+				</a></div><br>
+
+
+    					</div>
+
+
+      				
+    			</div>
+  				</div>
+					</div>
+
+				
+				
+				<br>
+				<br> 
+
+					
+					
+
+				
+					  
+
+			</div>
+			<div><button type="submit" class="btn btn-info pull-right">Enviar Datos</button>
+
+         			 <input type="hidden" name="_formname" value="prueba"/>
+				
+			</div>
+			
+
+
+				
+		</div>
+
+	
+		<div class="col-md-4">
+			<div class="form-group">
+					
+			
+
+			
+			
+			
+
+					
+					<label>Fecha de alta del Equipo:</label>
+					<div class='input-group date' id='datetimepicker1'>
+						{{=form.custom.widget.frecibe}}
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+
+						</span>
+
+
+
+
+
+
+			</div>
+
+
+
+
+			
+					
+					</div>
+					
+					<div class="form-group">
+						<label for="canti">Recibe:</label>
+						<textarea name="qrebe" rows="6" cols="40"></textarea>
+					</div>
+
+
+					<div class="form-group">
+						<label for="canti">Descripcion:</label>
+						<textarea name="descrip1" rows="6" cols="40"></textarea>
+					</div>
+					<div class="form-group">
+					<label for="email">Estado:</label>
+					{{=form.custom.widget.estado}}
+					</div>
+
+					<div class="form-group">
+					<input type="file" name="tu_imagen" id="archivo" size="40">
+
+					<input type="submit" name="boton" value="Subir archivo" id="boton">
+
+
+
+
+					
+					
+					
+					
+					
+
+			</div>
+
+		
+	</div>
+
+
+	<div class="col-md-4">
+			<div class="form-group">
+					
+			
+
+			
+			
+			
+
+					
+					<label>Fecha de Baja del Equipo:</label>
+					<div class='input-group date' id='datetimepicker1'>
+						{{=form.custom.widget.fbaja}}
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+
+						</span>
+
+
+
+
+
+
+			</div>
+
+
+				
+
+			
+					
+					</div>
+
+					<div class="form-group">
+						<label for="canti">Da de Baja:</label>
+						<textarea name="qbaja" rows="6" cols="40"></textarea>
+					</div>
+
+
+					<div class="form-group">
+						<label for="canti">Descripcion:</label>
+						<textarea name="descripcion" rows="6" cols="40"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="canti">Descripcion:</label>
+						<textarea name="descrip3" rows="6" cols="40"></textarea>
+					</div>
+
+	
+
+					
+
+	</form>
+</div>
+
+
+  
+</div>
+<div>
+</div>
+ </div>
+</div>
+</div>
+ </div>
+</div>
+</div>
+
+

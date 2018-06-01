@@ -1,0 +1,60 @@
+{{extend 'layout.html'}}
+
+<ul class="breadcrumb">
+    <li><a href="{{=URL(c='default',f='principal')}}"  ><span class="glyphicon glyphicon-th" ></span> Panel administración</a></li>
+    
+     
+    
+</ul>
+
+
+
+
+
+<div class="container-fluid">
+  <h2>Panel de Auditoria</h2>
+  <h5>Usuario: <strong>{{=quien.last_name}}, {{=quien.first_name}}</strong></h5> 
+  <br>
+  <p>Registros creados por el usuario</p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Clave del registro</th>
+        <th>Fecha / hora de creación</th>
+        <th>Fecha del parte</th>
+      </tr>
+    </thead>
+    {{for i in creado:}}
+    <tbody>
+      <tr>
+        <td align="center">{{=i.id}}</td>
+        <td align="center">{{=i.created_on.day}} / {{=i.created_on.month}} / {{=i.created_on.year}} --- {{=i.created_on.hour}}:{{=i.created_on.minute}} Hs.</td>
+        <td align="center">{{=i.fecha_parte.day}} / {{=i.fecha_parte.month}} / {{=i.fecha_parte.year}}</td>
+      </tr>
+      
+    </tbody>
+    {{pass}}
+  </table>
+  <br>
+  <p>Registros modificados por el usuario</p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Clave del registro</th>
+        <th>Fecha / hora de modificación</th>
+        <th>Fecha del parte</th>
+      </tr>
+    </thead>
+    {{for i in modificado:}}
+    <tbody>
+      <tr>
+        <td align="center">{{=i.id}}</td>
+        <td align="center">{{=i.modified_on.day}} / {{=i.modified_on.month}} / {{=i.modified_on.year}} --- {{=i.modified_on.hour}}:{{=i.modified_on.minute}} Hs.</td>
+        <td align="center">{{=i.fecha_parte.day}} / {{=i.fecha_parte.month}} / {{=i.fecha_parte.year}}</td>
+      </tr>
+      
+    </tbody>
+    {{pass}}
+  </table>
+
+</div>

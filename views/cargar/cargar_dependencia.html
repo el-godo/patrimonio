@@ -1,0 +1,67 @@
+
+{{extend 'layout_modal.html'}}
+
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  
+    $("#myModal").modal('show');
+  
+});
+</script>
+<style type="text/css">
+    #myModal {
+                
+                top:25%;
+                right:5%;
+                
+                outline: none;
+
+                
+             }
+    .modal-header{
+                background: #265a88;}
+    .modal-title{
+        color: #fff;
+    }   
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+    
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade" data-backdrop="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title"><img src="{{=URL('static','images/atencion.png')}}" alt=""> Cargar Dependencia  <span class="label label-danger"></span></h4>
+                </div>
+                <div class="modal-body">
+                
+                    
+                       {{=formulario}}
+                    
+                   
+                    
+                </div>
+                <div class="modal-footer">
+                    
+                    <a href="{{=URL(c='nreg',f='nreg')}}" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Cancelar</a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>  
+
