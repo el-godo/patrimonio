@@ -1,16 +1,27 @@
 {{extend 'layout_imprimir.html'}}
 <style>
-	#titulo{background-color: #642EFE;
+	#titulo{background-color: #265a88;
 		color:#ffffff;
 		text-align: center;
-
+    border-color: #BDD7F2;
 	}
 	#tabla{
-		{background-color: #642EFE;
-		color:#ffffff;
-		text-align: center;
+		
 
 	}
+  #encabezado{
+    background-color:#3E5FEC;
+    color:#ffffff;
+    text-align: center;
+
+  }
+  #tabla{
+    background-color:#AAC5F3; 
+    color:#ffffff;
+    text-align: center;
+
+  }
+
 </style>
 
 <div class="panel panel-default">
@@ -19,15 +30,20 @@
   {{=ndepe}}</strong></h4></div><!--pongo el nombre de la dependencia-->
   <table class="table" id:tabla>
 
-      <tr>
-      <td bgcolor="yellow"><strong>Nº</strong></td>
-      <td bgcolor="yellow"><strong>Tipo</strong></td>
-      <td bgcolor="yellow"><strong>Marca</strong></td>
-      <td bgcolor="yellow"><strong>Modelo</strong></td>
-      <td bgcolor="yellow"><strong>Numero de serie</strong></td>
-      <td bgcolor="yellow"><strong>Observaciones</strong></td>    
+      <tr >
+      <td id="encabezado"><strong>Nº</strong></td>
+      <td id="encabezado"><strong>Tipo</strong></td>
+      <td id="encabezado"><strong>Marca</strong></td>
+      <td id="encabezado"><strong>Modelo</strong></td>
+      <td id="encabezado"><strong>Numero de serie</strong></td>
+      <td id="encabezado"><strong>Observaciones</strong></td>   
+      <td id="encabezado"><strong></strong></td>
+      <td id="encabezado"><strong></strong></td>     
+      <td id="encabezado"><strong></strong></td> 
+       <td id="encabezado"><strong></strong></td> 
+
       
-      <td bgcolor="yellow"> <strong>Cantidad<br></strong></td>
+      
       
 
     </tr> 
@@ -90,15 +106,18 @@
       		<tr>
       		
  			
-      <td bgcolor="yellow"><strong></strong></td>
+      <td id="tabla"><strong></strong></td>
 
-      <td bgcolor="yellow"><strong> </strong></td>
-      <td bgcolor="yellow"><strong>Total</strong></td>
-      <td bgcolor="yellow"><strong></strong></td>
-      <td bgcolor="yellow"><strong></strong></td>
-      <td bgcolor="yellow"><strong></strong></td>    
+      <td id="tabla"><strong> </strong></td>
+      <td id="tabla"><strong>Total</strong></td>
+      <td id="tabla"><strong></strong></td>
+      <td id="tabla"><strong></strong></td>
+      <td id="tabla"><strong></strong></td>    
       
-      <td bgcolor="yellow"><strong>{{=c2}}</strong></td>
+      <td id="tabla"><strong>{{=c2}}</strong></td>
+      <td id="tabla"><strong></strong></td>
+      <td id="tabla"><strong></strong></td>     
+      <td id="tabla"><strong></strong></td>  
        {{c2=0}}
 
       
