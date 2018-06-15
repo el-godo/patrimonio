@@ -47,13 +47,13 @@
 
 
 
-
+{{a="sin_serie"}}<!--genero una variable para que lleve el argumento de la variable -->
 
   
   {{=form}}
    
   
-  <a  class="btn btn-danger" role="button"  id='boton_sin' href="{{=URL(r=request,f='../../nreg/generar.html')}}"><span class="glyphicon glyphicon-ok"></span > sin numero de serie</a>
+  <a  class="btn btn-danger" role="button" id='boton_sin' href="{{=URL(r=request,f='../../nreg/generar.html',args=[a])}}"><span class="glyphicon glyphicon-ok"></span > sin numero de serie</a>
  
   
   

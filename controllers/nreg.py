@@ -173,14 +173,21 @@ def generar():
         #redirect(URL('nreg', args=[comp]))
     #poner un valor por defecto a un campo del formulario
     
-    db.carga.serie.default=request.args[0]    
+
+    atrapa=request.args[0]
+    if atrapa =="sin_serie":
+        atrapa=''
+
+
+    
+     
 
 
     form = SQLFORM(db.carga)
                                 
     if form.process(session=None,formname='prueba').accepted:
 
-            redirect(URL(c='nreg',f='pregunta'))
+            redirect(URL(c='nreg',f='code_barra',args=[form.vars.serie]))
             response.flash = 'Formulario aceptado'
 
       
@@ -205,7 +212,7 @@ def generar():
 
 
 
-    return dict(form=form,a=a,b=b,c=c,d=d,x=x,serie=serie,nserie=nserie,serie2=serie2,serie0=serie0,comp=comp,
+    return dict(form=form,atrapa=atrapa,a=a,b=b,c=c,d=d,x=x,serie=serie,nserie=nserie,serie2=serie2,serie0=serie0,comp=comp,
         )
 
 
@@ -213,7 +220,18 @@ def generar():
 def pregunta():
 
 
-    return dict()		
+    return dict()
+
+def code_barra():  
+    atrapa=request.args[0]
+    #{{xml=(atrapa)}}
+    
+
+
+
+
+
+    return dict(atrapa=atrapa)  
 
 
 

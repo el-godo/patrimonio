@@ -181,7 +181,8 @@ $(document).ready(function(){
 				</div>
 				<div class="form-group">
 					<label for="canti">Numero de Serie:</label>
-					<input type="text" name="serie" class="form-control">
+					<input type="text" name="serie" id="serie" class="form-control" value="{{=atrapa}}">
+					
 
 
 				</div>
@@ -357,6 +358,18 @@ $(document).ready(function(){
 						<label for="canti">Da de Baja:</label>
 						<textarea name="qbaja" rows="6" cols="40"></textarea>
 					</div>
+					<script>
+						
+						var serie0='{{=serie0}}';//paso el valor de la variable serie0 a javascript
+							document.getElementById("aceptar").addEventListener("click",function(){
+								document.getElementById("serie").document.write(serie0)
+								 	
+							})
+
+
+					
+
+					</script>
 
 
 					
@@ -379,6 +392,8 @@ $(document).ready(function(){
  </div>
 </div>
 </div>
+
+
 
 
 

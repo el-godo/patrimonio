@@ -1,0 +1,29 @@
+{{extend 'layout.html'}}
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="{{=URL('static','js/JsBarcode.all.js')}}"></script>
+</head>
+<canvas id="canvas"></canvas>
+
+
+
+<body>
+
+
+<script>
+  var serie='{{=atrapa}}'
+  JsBarcode("#canvas", serie);
+</script>
+
+
+
+</body>
+</html> 
+  
+
+ 
+        
+        
+          
+     

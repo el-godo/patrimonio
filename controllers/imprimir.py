@@ -13,19 +13,19 @@ def imprimir2():
 	query=db((db.carga.dependencia==atrapa)&(db.carga.estado!="Inactivo")).select()
 	settipo=db(db.tipos).select()
 	setmarca=db(db.marcas).select()
-	l1=[]
+	l1=[] #creo 2 listas l1 para el total de tipos y l2 para los tipos  que se repiten en l1
 	l2=[]
 	
 	for x in query:
 		
-		l1.append(x.tipo)
+		l1.append(x.tipo)  #agrego el total de tipos a l1
 
 	t=0	
 
 	ax=''	
 	l1.sort()#ordeno la lista
 
-	for xi in l1:
+	for xi in l1:   #recorro la lista l1
 		t=0
 
 		if ax == xi:
@@ -33,7 +33,7 @@ def imprimir2():
 			
 		else:
 			ax=xi
-			l2.append(xi)
+			l2.append(xi)  #agrego los tipos  repetidos de l1 a l2
 
 	cl2=len(l2)		
 		

@@ -147,6 +147,9 @@ if auth.is_logged_in():
   (SPAN(I(_class=' glyphicon glyphicon-plus'), B(' Cargar Bien')),False,URL(c='nreg', f='consulta')),
   (SPAN(I(_class=' glyphicon glyphicon-zoom-out'), B(' Consulta')),False,URL(c='consulta', f='menu')),
   (SPAN(I(_class='glyphicon glyphicon-user'), B('Panel Administrador')),False,URL(c='usuario', f='usuario'))]
-
+  (T('Asuntos Judiciales'), False, None, [
+            (SPAN(I(_class='glyphicon glyphicon-plus '), B(' Parte de novedades')),False,URL(c='parte', f='home_parte')),LI(_class="divider"),
+            (SPAN(I(_class='glyphicon glyphicon-scale'), B(' Parte de accidentes')),False,URL(c='accidentes', f='home_accidentes')),LI(_class="divider")
+            ])
   
 
